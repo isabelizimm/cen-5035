@@ -2,20 +2,16 @@ project:
   type: website
 
 website:
-  title: "."
+  title: "CEN5035"
   navbar:
-    type: dark
-    background: primary
+    background: 'white'
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: home
+      - href: blog.qmd
+        text: blog
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: morph
     toc: true
-
-
-

@@ -1,0 +1,99 @@
+---
+format: html
+date: Jan 19, 2023
+title: What is software engineering? What are requirements?
+author: Isabel Zimmerman
+---
+
+## 
+
+
+## Fault vs. failure
+
+## Modeling and estimating software requirements
+
+- if you don't know what to model, go back to domain knowledge
+- clear project plan to keep stakeholders informed
+- have a clear understanding of what is expected
+- need to have budgeting and resource planning for allocation of appropriate amounts of time, money, and personnel
+- help to set realistic expectations for the project, to improve communication btwn team members and stakeholders
+- to identify potential changes or additions to the requirement
+- 
+
+some frameworks
+- waterfall model: once you complete a phase, you cannot go back
+- agile: work in sprints for fast iteration, try to break down tasks for concurrency
+
+# Types of requirements
+
+- user requirements
+    - statments in natural language plus diagrams of the services the system provides + operational constraints
+    - written for customers
+    - client managers, system end-users, client engineers, contract managers, system architects
+
+- system requirements
+    - structured document setting out detailed descriptions of system services
+    - written as contract between client and contractor
+    - system end-users, client engineers, system architects, software developers
+
+- software specification
+    - detailed software descriptions which can serve as a basis for a design or implementation
+    - client engineers, system architects, software developers
+    - written for developers
+
+## functional, nonfunctional, and domain requirements/classification
+
+- functional requirements
+    - functionality and services provided by the system
+        - how the system should react to certain inputs
+        - how the system should behave in certain situations
+
+- nonfunctional requirements
+    - constraints on the services or functions offered by the system
+
+    1. product requirements: requirements which specify that the delivered product must behave in a certain way (execution speed, reliability)
+    2. organizational/process requirements: consequence of organizational policies and procedures (implementational requirements, process standards used)
+    3. external requirements: arise from factors which are external to the system and its development process (legislative, interoperability)
+
+## domain requirement
+
+- from application domain of the system
+- refelcts the characteristics of that domain
+- maybe functional or non functional
+- if domain requirements are not satisfied, the system may be unworkable
+
+examples
+
+- some documents must be deleted upon printing
+
+- understandability
+    - requiremenets are expressed in the language of the application domain
+- implicitness
+    - domain specialists understand the area so well they dont think to make these things explicit
+
+# User requirements
+
+should describe functional and non-functional requirements
+
+- needs to be understandable by system users who don't have detailed technical knowledge
+
+User requirements are defined using natural language, tables, and diagrams
+
+::: callout-important
+# problems with natural language
+
+- ambiguity: readers and writers may not interpret words in the same way
+- over-flexibility: the same thing may be expressed in a number of different ways
+- requirements amalgamation & confusion: several different (eg, functional and non-functional) requirements may be expressed/mixed together
+- lack of modularization: natural language structures are inadequate to structure system requirements
+:::
+
+
+# Guidelines for writing requirements
+
+- invent a standard format and use it for all requirements
+- use language in a consistent way
+    - "shall" for mandatory reqs
+    - "should" for desirable reqs
+- use **text highlighting** to identify key parts of the requirements
+- avoid using jargon

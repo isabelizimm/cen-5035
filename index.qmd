@@ -1,7 +1,5 @@
 ---
-title: "."
+title: "CEN5035"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This is a site for notes on CEN5035, Advanced Software Engineering. Taken Spring 2023 at Florida Polytechnic University.

@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": ".",
+    "title": "CEN5035",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "This is a site for notes on CEN5035, Advanced Software Engineering. Taken Spring 2023 at Florida Polytechnic University."
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,40 @@
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "posts/jan-19.html#fault-vs.-failure",
+    "href": "posts/jan-19.html#fault-vs.-failure",
+    "title": "What is software engineering? What are requirements?",
+    "section": "Fault vs. failure",
+    "text": "Fault vs. failure"
+  },
+  {
+    "objectID": "posts/jan-19.html#modeling-and-estimating-software-requirements",
+    "href": "posts/jan-19.html#modeling-and-estimating-software-requirements",
+    "title": "What is software engineering? What are requirements?",
+    "section": "Modeling and estimating software requirements",
+    "text": "Modeling and estimating software requirements\n\nif you don’t know what to model, go back to domain knowledge\nclear project plan to keep stakeholders informed\nhave a clear understanding of what is expected\nneed to have budgeting and resource planning for allocation of appropriate amounts of time, money, and personnel\nhelp to set realistic expectations for the project, to improve communication btwn team members and stakeholders\nto identify potential changes or additions to the requirement\n\n\nsome frameworks - waterfall model: once you complete a phase, you cannot go back - agile: work in sprints for fast iteration, try to break down tasks for concurrency"
+  },
+  {
+    "objectID": "posts/jan-19.html#functional-nonfunctional-and-domain-requirementsclassification",
+    "href": "posts/jan-19.html#functional-nonfunctional-and-domain-requirementsclassification",
+    "title": "What is software engineering? What are requirements?",
+    "section": "functional, nonfunctional, and domain requirements/classification",
+    "text": "functional, nonfunctional, and domain requirements/classification\n\nfunctional requirements\n\nfunctionality and services provided by the system\n\nhow the system should react to certain inputs\nhow the system should behave in certain situations\n\n\nnonfunctional requirements\n\nconstraints on the services or functions offered by the system\n\n\nproduct requirements: requirements which specify that the delivered product must behave in a certain way (execution speed, reliability)\norganizational/process requirements: consequence of organizational policies and procedures (implementational requirements, process standards used)\nexternal requirements: arise from factors which are external to the system and its development process (legislative, interoperability)"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "blog",
+    "section": "",
+    "text": "What is software engineering? What are requirements?\n\n\n\n\n\n\n\n\n\n\n\n\nJan 19, 2023\n\n\nIsabel Zimmerman\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/jan-19.html#domain-requirement",
+    "href": "posts/jan-19.html#domain-requirement",
+    "title": "What is software engineering? What are requirements?",
+    "section": "domain requirement",
+    "text": "domain requirement\n\nfrom application domain of the system\nrefelcts the characteristics of that domain\nmaybe functional or non functional\nif domain requirements are not satisfied, the system may be unworkable\n\nexamples\n\nsome documents must be deleted upon printing\nunderstandability\n\nrequiremenets are expressed in the language of the application domain\n\nimplicitness\n\ndomain specialists understand the area so well they dont think to make these things explicit"
   }
 ]

@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CEN5035",
-    "section": "",
-    "text": "This is a site for notes on CEN5035, Advanced Software Engineering. Taken Spring 2023 at Florida Polytechnic University."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "posts/jan-19.html#fault-vs.-failure",
     "href": "posts/jan-19.html#fault-vs.-failure",
     "title": "What is software engineering? What are requirements?",
@@ -35,17 +21,45 @@
     "text": "functional, nonfunctional, and domain requirements/classification\n\nfunctional requirements\n\nfunctionality and services provided by the system\n\nhow the system should react to certain inputs\nhow the system should behave in certain situations\n\n\nnonfunctional requirements\n\nconstraints on the services or functions offered by the system\n\n\nproduct requirements: requirements which specify that the delivered product must behave in a certain way (execution speed, reliability)\norganizational/process requirements: consequence of organizational policies and procedures (implementational requirements, process standards used)\nexternal requirements: arise from factors which are external to the system and its development process (legislative, interoperability)"
   },
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "blog",
-    "section": "",
-    "text": "What is software engineering? What are requirements?\n\n\n\n\n\n\n\n\n\n\n\n\nJan 19, 2023\n\n\nIsabel Zimmerman\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/jan-19.html#domain-requirement",
     "href": "posts/jan-19.html#domain-requirement",
     "title": "What is software engineering? What are requirements?",
     "section": "domain requirement",
     "text": "domain requirement\n\nfrom application domain of the system\nrefelcts the characteristics of that domain\nmaybe functional or non functional\nif domain requirements are not satisfied, the system may be unworkable\n\nexamples\n\nsome documents must be deleted upon printing\nunderstandability\n\nrequiremenets are expressed in the language of the application domain\n\nimplicitness\n\ndomain specialists understand the area so well they dont think to make these things explicit"
+  },
+  {
+    "objectID": "posts/jan-26.html",
+    "href": "posts/jan-26.html",
+    "title": "characteristics of software requirements",
+    "section": "",
+    "text": "structured natural language\n\ndepends on defining standard forms\n\ngraphical notation\n\ngraphical language, supplemented by text annotations, is used to define functional requirements\nfinite state machine (similar to directed acyclic graph)\ninput is the actioin O -> O -> O\n\nmathematical/formal specifications"
+  },
+  {
+    "objectID": "posts/jan-26.html#requirements-document",
+    "href": "posts/jan-26.html#requirements-document",
+    "title": "characteristics of software requirements",
+    "section": "requirements document",
+    "text": "requirements document\n\nofficial statement of what is required of the system developers\nshould include both a definition and specification of requirements\nit is not a design document. as far as possible, it is a set of WHAT the system should do rather than HOW it should do it reference"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CEN5035",
+    "section": "",
+    "text": "This is a site for notes on CEN5035, Advanced Software Engineering. Taken Spring 2023 at Florida Polytechnic University."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "blog",
+    "section": "",
+    "text": "rewrapped\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\ncharacteristics of software requirements\n\n\n\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\n\n\n\n\n\n\nWhat is software engineering? What are requirements?\n\n\n\n\n\n\n\n\n\n\n\n\nJan 19, 2023\n\n\nIsabel Zimmerman\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/first-draft.html",
+    "href": "posts/first-draft.html",
+    "title": "rewrapped",
+    "section": "",
+    "text": "#| standalone: true\n\nfrom shiny import *\nimport pandas as pd\n# from pathlib import Path\n\n# df = pd.read_csv(Path(__file__).parent / \"df.csv\")\n\napp_ui = ui.page_fluid(\n    ui.output_ui(\"some_html\"),\n    ui.input_slider(\"n\", \"N\", 0, 100, 40),\n    ui.output_text_verbatim(\"txt\"),\n)\n\ndef server(input, output, session):\n    @output\n    @render.text\n    def txt():\n        return f\"The value of n*2 is {input.n() * 2}\"\n\n    @output\n    @render.ui\n    def some_html():\n        return ui.HTML(\"<marquee>time to rewrap!</marquee>\")\n\napp = App(app_ui, server)"
   }
 ]

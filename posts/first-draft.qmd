@@ -1,0 +1,37 @@
+---
+title: rewrapped
+format: html
+filters:
+  - shinylive
+---
+
+
+```{shinylive-python}
+#| standalone: true
+
+from shiny import *
+import pandas as pd
+# from pathlib import Path
+
+# df = pd.read_csv(Path(__file__).parent / "df.csv")
+
+app_ui = ui.page_fluid(
+    ui.output_ui("some_html"),
+    ui.input_slider("n", "N", 0, 100, 40),
+    ui.output_text_verbatim("txt"),
+)
+
+def server(input, output, session):
+    @output
+    @render.text
+    def txt():
+        return f"The value of n*2 is {input.n() * 2}"
+
+    @output
+    @render.ui
+    def some_html():
+        return ui.HTML("<marquee>time to rewrap!</marquee>")
+
+app = App(app_ui, server)
+```
+

@@ -1,0 +1,76 @@
+---
+format: html
+title:  characteristics of software requirements
+date: Jan 26, 2023
+---
+
+## alternatives to natural language specification
+
+- structured natural language
+    - depends on defining standard forms
+- graphical notation
+    - graphical language, supplemented by text annotations, is used to define functional requirements
+    - finite state machine (similar to directed acyclic graph)
+    - input is the actioin
+        O -> O -> O 
+- mathematical/formal specifications
+
+## requirements document
+- official statement of what is required of the system developers
+- should include both a definition and specification of requirements
+- it is **not** a design document. as far as possible, it is a set of WHAT the system should do rather than HOW it should do it
+    reference
+
+# Software Requirements Specification (SRS)
+
+- description of the official software system to be developed/implemented
+- complete description of the behavior of the system to be developed
+- precisely defines the software product that will be built
+- knows all the requirements
+
+_characteristics of srs_
+
+1. correctness: covers all the requirements that are actually expected of the system
+2. completeness: cover all functional and non-functional requirements, formatting
+3. consistency: is consistent if there are no conflicts between any set of requirements
+4. unambiguousness: requirements have only 1 interpretation
+5. ranking for importance and stability: criterion to classify requirements as less or more important + are they desirable or essential
+6. modifiablity: should be capable of easily accepting changes to the system to some extent. modifications should be properly indexed and cross-referenced
+7. testability: easy to generate test cases
+8. understandable by the customer: language should be kept easy and clear
+9. right level of abstraction: level of abstraction varies according to purposes of the SRS
+
+```{mermaid}
+graph TD
+    A[SRS] --> B[Design]
+    A --> E(1. requirements)
+    B --> C[Important tasks]
+    C --> D[Test]
+```
+
+[1] IEEE 830 standard for good SRS
+- establish basis for agreement between customer and supplier
+- reduce dev effort
+- basis for estimating costs and schedules
+- baseline for validation and verification
+- basis for enhancement
+
+Introduction (purpose: paragraph, scope: , definitions and acronyms, references)
+
+**purpose**: identify product
+**references**: include APIs, patents
+
+product perspective
+    - describe context and origin of product being specified in this SRS
+    - if it is a component to a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two
+    - simple diagram that shows the major components
+    - dont want to just have a pictogram and no context
+
+product functions
+    - lists all major functions of the system
+    - summary of all the functions of a the software
+    - organized in a way that makes the list of functions understandable to the customer or to anyone else reading the document for the first time
+
+
+functional req: input and output
+non functional req: no output

@@ -1,5 +1,47 @@
 [
   {
+    "objectID": "posts/first-draft.html",
+    "href": "posts/first-draft.html",
+    "title": "rewrapped",
+    "section": "",
+    "text": "#| standalone: true\n\nfrom shiny import *\nimport pandas as pd\n\napp_ui = ui.page_fluid(\n    ui.output_ui(\"some_html\"),\n    ui.input_slider(\"n\", \"N\", 0, 100, 40),\n    ui.output_text_verbatim(\"txt\"),\n)\n\ndef server(input, output, session):\n    @output\n    @render.text\n    def txt():\n        return f\"The value of n*2 is {input.n() * 2}\"\n\n    @output\n    @render.ui\n    def some_html():\n        return ui.HTML(\"<marquee>time to rewrap!</marquee>\")\n\napp = App(app_ui, server)"
+  },
+  {
+    "objectID": "posts/feb-9.html",
+    "href": "posts/feb-9.html",
+    "title": "an ode to functional/non-functional requirements",
+    "section": "",
+    "text": "functional requirements aka things in the product that have functions requirements\n\nuser registration and login systen\nbackend to hold information\nhaving gues mode and checkout in guest mode\nenable cookies\nscreen reader support\nAI support thru chat\n\n\n\n\n\n\n\nTip\n\n\n\nif it says system, its probably functional\n\n\nnon-functional requirements (speed, size, ease of use, reliability, robustness, portability, policy) make things testable accessibility makes something a non-functional requirement\n\nusing nosql\nnon functional\nconsent for cookies\naccessibility for people with disabilities\nserver space for 500\n\npolicies are non-functional people are not the issue (ie, real-person customer support)"
+  },
+  {
+    "objectID": "posts/feb-9.html#section-2-the-overall-description",
+    "href": "posts/feb-9.html#section-2-the-overall-description",
+    "title": "an ode to functional/non-functional requirements",
+    "section": "section 2, the overall description",
+    "text": "section 2, the overall description\n\nproduct perspective\n\ncontext and origin of product beingn specified\nif it defines the component of a larger system, relate it to the larager system. needs to work on its own and as a larger pieces\n\n\n\nproduction functions\n\nlist major functions of the system\nsummary of all the functions of the software. organizd in a way that makes the list of functions udnerstandable to the customer or to anyone else reading the document for the first time\nshould be consistent with the functional requirements of system futures\n\n\n\nuser classes and characteristics\n\nlist users involved with the proposed system including the general characteristics of eventual users\nuser classes may be differentiated based on frequency of use, subset product functions used, etc\n\n\n\ndesign and implementation constraints\n\ndescribe any items or issues that will limit the options available to developers\neg, corporate or regulatory policies, hardware limitations, interfaces to other applications. specific tech to be used, etc\n\n\n\nassumptions and dependencies\n\nany assumed factors that could affect requirements in SRS\n3rd party stuff, etc"
+  },
+  {
+    "objectID": "posts/feb-9.html#external-interface-requirements",
+    "href": "posts/feb-9.html#external-interface-requirements",
+    "title": "an ode to functional/non-functional requirements",
+    "section": "external interface requirements",
+    "text": "external interface requirements\n\nuser interfaces\n\nuser interacting with stuff\nidk i spaced out\n\n\n\nhardware interfaces\n\nlogical and physical characteristics of each interface between software product and hardware component\neg, supported devices, nature of data/control interactions\n\n\n\nsoftware interfaces\n\n“we can skip this”\n\n\n\ncommunications interfaces\n\ndescribe the requirements associated with any communications"
+  },
+  {
+    "objectID": "posts/feb-9.html#system-features-i-think",
+    "href": "posts/feb-9.html#system-features-i-think",
+    "title": "an ode to functional/non-functional requirements",
+    "section": "system features, i think",
+    "text": "system features, i think\n\ndescription and priorities\n\n\nsomething else i missed\n\n\nfunctional and non-functional requirements\n\nfunctional reqs\nnonfunctional reqs\nwhat else do you need\nthey should be in a"
+  },
+  {
+    "objectID": "posts/feb-9.html#other-nonfunctional-requirements",
+    "href": "posts/feb-9.html#other-nonfunctional-requirements",
+    "title": "an ode to functional/non-functional requirements",
+    "section": "other nonfunctional requirements",
+    "text": "other nonfunctional requirements\nso actually theres many ways to display these\n\nperformance requirements\n\n\nsafety requirements\n\n\nsecurity requirements\n\n\nsoftware quality requirements\n\neg, adaptability, availability, correctness, flexibility, etc\nwrite these to be specific, quantitative, and verifiable\n\n\n\nbusiness rules"
+  },
+  {
     "objectID": "posts/jan-19.html#fault-vs.-failure",
     "href": "posts/jan-19.html#fault-vs.-failure",
     "title": "What is software engineering? What are requirements?",
@@ -53,13 +95,6 @@
     "href": "blog.html",
     "title": "blog",
     "section": "",
-    "text": "rewrapped\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\ncharacteristics of software requirements\n\n\n\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\n\n\n\n\n\n\nWhat is software engineering? What are requirements?\n\n\n\n\n\n\n\n\n\n\n\n\nJan 19, 2023\n\n\nIsabel Zimmerman\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/first-draft.html",
-    "href": "posts/first-draft.html",
-    "title": "rewrapped",
-    "section": "",
-    "text": "#| standalone: true\n\nfrom shiny import *\nimport pandas as pd\n# from pathlib import Path\n\n# df = pd.read_csv(Path(__file__).parent / \"df.csv\")\n\napp_ui = ui.page_fluid(\n    ui.output_ui(\"some_html\"),\n    ui.input_slider(\"n\", \"N\", 0, 100, 40),\n    ui.output_text_verbatim(\"txt\"),\n)\n\ndef server(input, output, session):\n    @output\n    @render.text\n    def txt():\n        return f\"The value of n*2 is {input.n() * 2}\"\n\n    @output\n    @render.ui\n    def some_html():\n        return ui.HTML(\"<marquee>time to rewrap!</marquee>\")\n\napp = App(app_ui, server)"
+    "text": "rewrapped\n\n\n\n\n\n\n\n\n\n\n\n\nApr 30, 2023\n\n\n\n\n\n\n\n\nan ode to functional/non-functional requirements\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 9, 2023\n\n\n\n\n\n\n\n\ncharacteristics of software requirements\n\n\n\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\n\n\n\n\n\n\nWhat is software engineering? What are requirements?\n\n\n\n\n\n\n\n\n\n\n\n\nJan 19, 2023\n\n\nIsabel Zimmerman\n\n\n\n\n\n\nNo matching items"
   }
 ]

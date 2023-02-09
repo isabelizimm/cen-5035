@@ -1,0 +1,119 @@
+---
+format: html
+date: February 9, 2023
+title: an ode to functional/non-functional requirements
+---
+
+# categorizing functional/non functional 
+
+functional requirements 
+aka
+things in the product that have functions requirements
+
+- user registration and login systen
+- backend to hold information
+- having gues mode and checkout in guest mode
+- enable cookies
+- screen reader support
+- AI support thru chat
+
+::: callout-tip
+if it says system, its probably functional
+:::
+
+
+non-functional requirements (speed, size, ease of use, reliability, robustness, portability, policy)
+make things testable
+accessibility makes something a non-functional requirement
+
+- using nosql
+- non functional
+- consent for cookies
+- accessibility for people with disabilities
+- server space for 500
+
+
+policies are non-functional
+people are not the issue (ie, real-person customer support)
+
+
+# SRS 
+
+## section 2, the **overall description**
+
+### product perspective
+
+- context and origin of product beingn specified
+- if it defines the component of a larger system, relate it to the larager system. needs to work on its own and as a larger pieces
+
+### production functions
+
+- list major functions of the system
+- summary of all the functions of the software. organizd in a way that makes the list of functions udnerstandable to the customer or to anyone else reading the document for the first time
+- should be consistent with the functional requirements of system futures
+
+### user classes and characteristics
+
+- list users involved with the proposed system including the general characteristics of eventual users
+- user classes may be differentiated based on frequency of use, subset product functions used, etc
+
+### design and implementation constraints
+
+- describe any items or issues that will limit the options available to developers
+- eg, corporate or regulatory policies, hardware limitations, interfaces to other applications. specific tech to be used, etc
+
+### assumptions and dependencies
+
+- any assumed factors that could affect requirements in SRS
+- 3rd party stuff, etc
+
+
+## external interface requirements
+
+### user interfaces
+
+- user interacting with stuff
+- idk i spaced out
+
+### hardware interfaces
+
+- logical and physical characteristics of each interface between software product and hardware component
+- eg, supported devices, nature of data/control interactions
+
+### software interfaces
+
+- "we can skip this"
+
+### communications interfaces
+
+- describe the requirements associated with any communications 
+
+## system features, i think
+
+### description and priorities
+
+### something else i missed
+
+### functional and non-functional requirements
+
+- functional reqs
+- nonfunctional reqs
+- what else do you need
+- they should be in a 
+
+## other nonfunctional requirements
+
+so actually theres many ways to display these
+
+### performance requirements
+
+### safety requirements
+
+### security requirements
+
+### software quality requirements
+
+- eg, adaptability, availability, correctness, flexibility, etc
+- write these to be specific, quantitative, and verifiable
+
+### business rules

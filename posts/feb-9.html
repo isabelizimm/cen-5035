@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-02-09">
 
-<title>CEN5035 - I literally hate categorizing functional/non-functional requirements</title>
+<title>CEN5035 - an ode to functional/non-functional requirements</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,14 +98,52 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#categorizing-functionalnon-functional" id="toc-categorizing-functionalnon-functional" class="nav-link active" data-scroll-target="#categorizing-functionalnon-functional">categorizing functional/non functional</a></li>
+  <li><a href="#srs" id="toc-srs" class="nav-link" data-scroll-target="#srs">SRS</a>
+  <ul class="collapse">
+  <li><a href="#section-2-the-overall-description" id="toc-section-2-the-overall-description" class="nav-link" data-scroll-target="#section-2-the-overall-description">section 2, the <strong>overall description</strong></a>
+  <ul class="collapse">
+  <li><a href="#product-perspective" id="toc-product-perspective" class="nav-link" data-scroll-target="#product-perspective">product perspective</a></li>
+  <li><a href="#production-functions" id="toc-production-functions" class="nav-link" data-scroll-target="#production-functions">production functions</a></li>
+  <li><a href="#user-classes-and-characteristics" id="toc-user-classes-and-characteristics" class="nav-link" data-scroll-target="#user-classes-and-characteristics">user classes and characteristics</a></li>
+  <li><a href="#design-and-implementation-constraints" id="toc-design-and-implementation-constraints" class="nav-link" data-scroll-target="#design-and-implementation-constraints">design and implementation constraints</a></li>
+  <li><a href="#assumptions-and-dependencies" id="toc-assumptions-and-dependencies" class="nav-link" data-scroll-target="#assumptions-and-dependencies">assumptions and dependencies</a></li>
+  </ul></li>
+  <li><a href="#external-interface-requirements" id="toc-external-interface-requirements" class="nav-link" data-scroll-target="#external-interface-requirements">external interface requirements</a>
+  <ul class="collapse">
+  <li><a href="#user-interfaces" id="toc-user-interfaces" class="nav-link" data-scroll-target="#user-interfaces">user interfaces</a></li>
+  <li><a href="#hardware-interfaces" id="toc-hardware-interfaces" class="nav-link" data-scroll-target="#hardware-interfaces">hardware interfaces</a></li>
+  <li><a href="#software-interfaces" id="toc-software-interfaces" class="nav-link" data-scroll-target="#software-interfaces">software interfaces</a></li>
+  <li><a href="#communications-interfaces" id="toc-communications-interfaces" class="nav-link" data-scroll-target="#communications-interfaces">communications interfaces</a></li>
+  </ul></li>
+  <li><a href="#system-features-i-think" id="toc-system-features-i-think" class="nav-link" data-scroll-target="#system-features-i-think">system features, i think</a>
+  <ul class="collapse">
+  <li><a href="#description-and-priorities" id="toc-description-and-priorities" class="nav-link" data-scroll-target="#description-and-priorities">description and priorities</a></li>
+  <li><a href="#something-else-i-missed" id="toc-something-else-i-missed" class="nav-link" data-scroll-target="#something-else-i-missed">something else i missed</a></li>
+  <li><a href="#functional-and-non-functional-requirements" id="toc-functional-and-non-functional-requirements" class="nav-link" data-scroll-target="#functional-and-non-functional-requirements">functional and non-functional requirements</a></li>
+  </ul></li>
+  <li><a href="#other-nonfunctional-requirements" id="toc-other-nonfunctional-requirements" class="nav-link" data-scroll-target="#other-nonfunctional-requirements">other nonfunctional requirements</a>
+  <ul class="collapse">
+  <li><a href="#performance-requirements" id="toc-performance-requirements" class="nav-link" data-scroll-target="#performance-requirements">performance requirements</a></li>
+  <li><a href="#safety-requirements" id="toc-safety-requirements" class="nav-link" data-scroll-target="#safety-requirements">safety requirements</a></li>
+  <li><a href="#security-requirements" id="toc-security-requirements" class="nav-link" data-scroll-target="#security-requirements">security requirements</a></li>
+  <li><a href="#software-quality-requirements" id="toc-software-quality-requirements" class="nav-link" data-scroll-target="#software-quality-requirements">software quality requirements</a></li>
+  <li><a href="#business-rules" id="toc-business-rules" class="nav-link" data-scroll-target="#business-rules">business rules</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">I literally hate categorizing functional/non-functional requirements</h1>
+<h1 class="title">an ode to functional/non-functional requirements</h1>
 </div>
 
 
@@ -112,6 +151,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 9, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -119,12 +164,154 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>accessibility makes something a non-functional requirement</p>
-<p>functional requirements aka things in the product that have functions requirements - user registration and login systen - backend to hold information - having gues mode and checkout in guest mode - enable cookies - accessibility for people with disabilities</p>
-<p>non-functional requirements (speed, size, ease of use, reliability, robustness, portability, policy) make things testable - using nosql - consent for cookies</p>
-<p>policies are non-functional</p>
+<section id="categorizing-functionalnon-functional" class="level1">
+<h1>categorizing functional/non functional</h1>
+<p>functional requirements aka things in the product that have functions requirements</p>
+<ul>
+<li>user registration and login systen</li>
+<li>backend to hold information</li>
+<li>having gues mode and checkout in guest mode</li>
+<li>enable cookies</li>
+<li>screen reader support</li>
+<li>AI support thru chat</li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>if it says system, its probably functional</p>
+</div>
+</div>
+<p>non-functional requirements (speed, size, ease of use, reliability, robustness, portability, policy) make things testable accessibility makes something a non-functional requirement</p>
+<ul>
+<li>using nosql</li>
+<li>non functional</li>
+<li>consent for cookies</li>
+<li>accessibility for people with disabilities</li>
+<li>server space for 500</li>
+</ul>
+<p>policies are non-functional people are not the issue (ie, real-person customer support)</p>
+</section>
+<section id="srs" class="level1">
+<h1>SRS</h1>
+<section id="section-2-the-overall-description" class="level2">
+<h2 class="anchored" data-anchor-id="section-2-the-overall-description">section 2, the <strong>overall description</strong></h2>
+<section id="product-perspective" class="level3">
+<h3 class="anchored" data-anchor-id="product-perspective">product perspective</h3>
+<ul>
+<li>context and origin of product beingn specified</li>
+<li>if it defines the component of a larger system, relate it to the larager system. needs to work on its own and as a larger pieces</li>
+</ul>
+</section>
+<section id="production-functions" class="level3">
+<h3 class="anchored" data-anchor-id="production-functions">production functions</h3>
+<ul>
+<li>list major functions of the system</li>
+<li>summary of all the functions of the software. organizd in a way that makes the list of functions udnerstandable to the customer or to anyone else reading the document for the first time</li>
+<li>should be consistent with the functional requirements of system futures</li>
+</ul>
+</section>
+<section id="user-classes-and-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="user-classes-and-characteristics">user classes and characteristics</h3>
+<ul>
+<li>list users involved with the proposed system including the general characteristics of eventual users</li>
+<li>user classes may be differentiated based on frequency of use, subset product functions used, etc</li>
+</ul>
+</section>
+<section id="design-and-implementation-constraints" class="level3">
+<h3 class="anchored" data-anchor-id="design-and-implementation-constraints">design and implementation constraints</h3>
+<ul>
+<li>describe any items or issues that will limit the options available to developers</li>
+<li>eg, corporate or regulatory policies, hardware limitations, interfaces to other applications. specific tech to be used, etc</li>
+</ul>
+</section>
+<section id="assumptions-and-dependencies" class="level3">
+<h3 class="anchored" data-anchor-id="assumptions-and-dependencies">assumptions and dependencies</h3>
+<ul>
+<li>any assumed factors that could affect requirements in SRS</li>
+<li>3rd party stuff, etc</li>
+</ul>
+</section>
+</section>
+<section id="external-interface-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="external-interface-requirements">external interface requirements</h2>
+<section id="user-interfaces" class="level3">
+<h3 class="anchored" data-anchor-id="user-interfaces">user interfaces</h3>
+<ul>
+<li>user interacting with stuff</li>
+<li>idk i spaced out</li>
+</ul>
+</section>
+<section id="hardware-interfaces" class="level3">
+<h3 class="anchored" data-anchor-id="hardware-interfaces">hardware interfaces</h3>
+<ul>
+<li>logical and physical characteristics of each interface between software product and hardware component</li>
+<li>eg, supported devices, nature of data/control interactions</li>
+</ul>
+</section>
+<section id="software-interfaces" class="level3">
+<h3 class="anchored" data-anchor-id="software-interfaces">software interfaces</h3>
+<ul>
+<li>“we can skip this”</li>
+</ul>
+</section>
+<section id="communications-interfaces" class="level3">
+<h3 class="anchored" data-anchor-id="communications-interfaces">communications interfaces</h3>
+<ul>
+<li>describe the requirements associated with any communications</li>
+</ul>
+</section>
+</section>
+<section id="system-features-i-think" class="level2">
+<h2 class="anchored" data-anchor-id="system-features-i-think">system features, i think</h2>
+<section id="description-and-priorities" class="level3">
+<h3 class="anchored" data-anchor-id="description-and-priorities">description and priorities</h3>
+</section>
+<section id="something-else-i-missed" class="level3">
+<h3 class="anchored" data-anchor-id="something-else-i-missed">something else i missed</h3>
+</section>
+<section id="functional-and-non-functional-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="functional-and-non-functional-requirements">functional and non-functional requirements</h3>
+<ul>
+<li>functional reqs</li>
+<li>nonfunctional reqs</li>
+<li>what else do you need</li>
+<li>they should be in a</li>
+</ul>
+</section>
+</section>
+<section id="other-nonfunctional-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="other-nonfunctional-requirements">other nonfunctional requirements</h2>
+<p>so actually theres many ways to display these</p>
+<section id="performance-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="performance-requirements">performance requirements</h3>
+</section>
+<section id="safety-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="safety-requirements">safety requirements</h3>
+</section>
+<section id="security-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="security-requirements">security requirements</h3>
+</section>
+<section id="software-quality-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="software-quality-requirements">software quality requirements</h3>
+<ul>
+<li>eg, adaptability, availability, correctness, flexibility, etc</li>
+<li>write these to be specific, quantitative, and verifiable</li>
+</ul>
+</section>
+<section id="business-rules" class="level3">
+<h3 class="anchored" data-anchor-id="business-rules">business rules</h3>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

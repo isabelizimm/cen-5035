@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-04-30">
 
-<title>CEN5035 - rewrapped</title>
+<title>CEN5035 - Olive</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -40,6 +39,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<meta name="shinylive:serviceworker_dir" content="..">
+<script src="../site_libs/quarto-contrib/shinylive-0.0.11/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="../site_libs/quarto-contrib/shinylive-0.0.11/shinylive/run-python-blocks.js" type="module"></script>
+<link href="../site_libs/quarto-contrib/shinylive-0.0.11/shinylive/shinylive.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">rewrapped</h1>
+<h1 class="title">Olive</h1>
 </div>
 
 
@@ -114,12 +118,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">April 30, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -127,15 +125,65 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="choose-your-persona" class="level4 fw-light">
-<h4 class="fw-light anchored" data-anchor-id="choose-your-persona">Choose your persona</h4>
-<div class="tool g-col-lg-9 g-col-12">
-<p><a href="olive.html" role="button" class="btn btn-outline-light"> <img src="../images/olive.png" class="img-fluid" alt="Black cat" width="77">Olive </a></p>
-<p><a href="toast.html" role="button" class="btn btn-outline-light"> <img src="../images/toast.png" class="img-fluid" alt="Brown dog" width="77">Toast </a> </p>
-</div>
+<ul id="choose-your-tool" class="nav nav-tabs" role="tablist">
+  <h3 class="no-anchor">Choose your tool</h3>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="olive.html">
+      <img src="../images/olive.png" height="60">Olive
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="toast.html">
+      <img src="../images/toast.png" height="60">Toast
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  // get file name
+  const filename = window.location.pathname.split("/").slice(-1)[0];
+  
+  // latch active
+  const toolLinks = window.document.querySelectorAll("#choose-your-tool a");
+  for (const tool of toolLinks) {
+    if (tool.href.endsWith(filename)) {
+      tool.classList.add("active");
+      break;
+    }
+  }
+  
+   // save in local storage
+  window.localStorage.setItem("tutorialTool", filename);
+});
+
+</script>
+<p>this is olive</p>
+<pre class="shinylive-python"><code>#| standalone: true
+
+from shiny import *
+import pandas as pd
+
+app_ui = ui.page_fluid(
+    ui.output_ui("some_html"),
+    ui.input_slider("n", "N", 0, 100, 40),
+    ui.output_text_verbatim("txt"),
+)
+
+def server(input, output, session):
+    @output
+    @render.text
+    def txt():
+        return f"The value of n*2 is {input.n() * 2}"
+
+    @output
+    @render.ui
+    def some_html():
+        return ui.HTML("&lt;marquee&gt;time to rewrap!&lt;/marquee&gt;")
+
+app = App(app_ui, server)</code></pre>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

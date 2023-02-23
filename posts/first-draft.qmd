@@ -2,34 +2,20 @@
 title: rewrapped
 format: html
 date: April 30, 2023
-filters:
-  - shinylive
 ---
 
+#### Choose your persona {.fw-light}
 
-```{shinylive-python}
-#| standalone: true
+::: {.tool .g-col-lg-9 .g-col-12}
 
-from shiny import *
-import pandas as pd
 
-app_ui = ui.page_fluid(
-    ui.output_ui("some_html"),
-    ui.input_slider("n", "N", 0, 100, 40),
-    ui.output_text_verbatim("txt"),
-)
+<a href="olive.html" role="button" class="btn btn-outline-light">
+![](../images/olive.png){width="77" fig-alt="Black cat"}Olive
+</a>
 
-def server(input, output, session):
-    @output
-    @render.text
-    def txt():
-        return f"The value of n*2 is {input.n() * 2}"
+<a href="toast.html" role="button" class="btn btn-outline-light">
+![](../images/toast.png){width="77" fig-alt="Brown dog"}Toast
+</a>
+</a>
 
-    @output
-    @render.ui
-    def some_html():
-        return ui.HTML("<marquee>time to rewrap!</marquee>")
-
-app = App(app_ui, server)
-```
-
+:::

@@ -4,7 +4,7 @@
     "href": "posts/first-draft.html",
     "title": "rewrapped",
     "section": "",
-    "text": "#| standalone: true\n\nfrom shiny import *\nimport pandas as pd\n\napp_ui = ui.page_fluid(\n    ui.output_ui(\"some_html\"),\n    ui.input_slider(\"n\", \"N\", 0, 100, 40),\n    ui.output_text_verbatim(\"txt\"),\n)\n\ndef server(input, output, session):\n    @output\n    @render.text\n    def txt():\n        return f\"The value of n*2 is {input.n() * 2}\"\n\n    @output\n    @render.ui\n    def some_html():\n        return ui.HTML(\"<marquee>time to rewrap!</marquee>\")\n\napp = App(app_ui, server)"
+    "text": "Choose your persona\n\n Olive \n Toast"
   },
   {
     "objectID": "posts/feb-9.html",
@@ -95,6 +95,6 @@
     "href": "blog.html",
     "title": "blog",
     "section": "",
-    "text": "rewrapped\n\n\n\n\n\n\n\n\n\n\n\n\nApr 30, 2023\n\n\n\n\n\n\n\n\nan ode to functional/non-functional requirements\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 9, 2023\n\n\n\n\n\n\n\n\ncharacteristics of software requirements\n\n\n\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\n\n\n\n\n\n\nWhat is software engineering? What are requirements?\n\n\n\n\n\n\n\n\n\n\n\n\nJan 19, 2023\n\n\nIsabel Zimmerman\n\n\n\n\n\n\nNo matching items"
+    "text": "rewrapped\n\n\n\n\n\n\n\n\n\n\n\n\nApr 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nan ode to functional/non-functional requirements\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 9, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncharacteristics of software requirements\n\n\n\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is software engineering? What are requirements?\n\n\n\n\n\n\n\n\n\n\n\n\nJan 19, 2023\n\n\nIsabel Zimmerman\n\n\n\n\n\n\nNo matching items"
   }
 ]

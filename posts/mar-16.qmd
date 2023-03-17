@@ -1,0 +1,78 @@
+---
+format: html
+title: I don't know what software architecture is and at this point I'm too afraid to ask
+---
+
+
+# software architecture
+
+describes a system and its major components and how they interact with each otheer
+
+
+software architecture and design includes several contributory factors such as: business strategy, quality attribute
+
+Artitecture: nonfunctional decisions are cast and separated by the functional requirements. In DESIGN, functional requirements are decided.
+
+## The Unified Modeling Language (UML) 
+
+idk its useful here
+
+Kruchten's 4+1 arch view model (logical, development, process, and physical views of a system and environment)
+
+
+```{mermaid}
+graph TD
+    A[logical] --> B[development]
+    B --> C[physical]
+    A -->D[process]
+    D -->C
+```
+
+- logical: functionality of the system, for the developers, engineers, managers
+- process: communication between processes, behavior, tasks (try to not create bottlenecks during concurrent work), for system architects, developers, people integrating
+- development: coding standards, gantt charts, agile-y, product owners, developers
+- physical: UI/UX, how to map hardware to software product owner, 
+
+## back to architecture
+
+- bluepreint for a system
+- software design provides a design plan that describes the elements of a system, how they fit, and work together to fulfill the requirement of the system
+
+```{mermaid}
+graph TD
+    A[software architecture design] -->|hardware arch| B[hardware arch design]
+    B --> |modification to hardware arch| A
+    A -->|modification to req| C[domain analysis, requirement analysis, risk analysis]
+    C --> |requirement desired quality| A
+    A --> |implmentation consistency| D[more stuff]
+    D --> |other requirements| A
+```
+
+
+well laid arch reduces busienss risks and associated with building a technical solution and builds a bridge btwn business and technical requirements
+
+dev
+- plan
+- code
+- build
+- test
+ops
+- release
+- deploy
+- operation/monitor/maintain
+
+
+each architectural style empasizes one or more of the quality attributes: usability, availability, secuity, performance, maintainability, flexibility, portability
+
+## quality attribute requirements
+
+__Quality attribute requirements (QAR) is specified in terms of observable, usually measurable chracteristics of the system that indicate its fitness for use.__
+
+- they are modifiers of functional requirements that indicate how it might be used
+
+Quality model is defined w linked topic areas:
+    - __process quality__: quality of process producing the product ()
+    - __internal quality__: quality of the structure itself ()
+    - __external quality__: quality of finished product, before delivery ()
+    - __quality in use__: quality of larger process in which the delivered product is used ()
+

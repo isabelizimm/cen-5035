@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Isabel Zimmerman">
-<meta name="dcterms.date" content="2023-01-19">
 
-<title>CEN5035 - What is software engineering? What are requirements?</title>
+<title>CEN5035 – olive</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -41,6 +39,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<meta name="shinylive:serviceworker_dir" content="..">
+<script src="../site_libs/quarto-contrib/shinylive-0.0.11/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="../site_libs/quarto-contrib/shinylive-0.0.11/shinylive/run-python-blocks.js" type="module"></script>
+<link href="../site_libs/quarto-contrib/shinylive-0.0.11/shinylive/shinylive.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -100,181 +103,72 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
-  <li><a href="#fault-vs.-failure" id="toc-fault-vs.-failure" class="nav-link" data-scroll-target="#fault-vs.-failure">Fault vs.&nbsp;failure</a></li>
-  <li><a href="#modeling-and-estimating-software-requirements" id="toc-modeling-and-estimating-software-requirements" class="nav-link" data-scroll-target="#modeling-and-estimating-software-requirements">Modeling and estimating software requirements</a></li>
-  <li><a href="#types-of-requirements" id="toc-types-of-requirements" class="nav-link" data-scroll-target="#types-of-requirements">Types of requirements</a>
-  <ul class="collapse">
-  <li><a href="#functional-nonfunctional-and-domain-requirementsclassification" id="toc-functional-nonfunctional-and-domain-requirementsclassification" class="nav-link" data-scroll-target="#functional-nonfunctional-and-domain-requirementsclassification">functional, nonfunctional, and domain requirements/classification</a></li>
-  <li><a href="#domain-requirement" id="toc-domain-requirement" class="nav-link" data-scroll-target="#domain-requirement">domain requirement</a></li>
-  </ul></li>
-  <li><a href="#user-requirements" id="toc-user-requirements" class="nav-link" data-scroll-target="#user-requirements">User requirements</a></li>
-  <li><a href="#guidelines-for-writing-requirements" id="toc-guidelines-for-writing-requirements" class="nav-link" data-scroll-target="#guidelines-for-writing-requirements">Guidelines for writing requirements</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">What is software engineering? What are requirements?</h1>
-</div>
 
 
+<ul id="choose-your-tool" class="nav nav-tabs" role="tablist">
+  <h3 class="no-anchor">Choose your tool</h3>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="olive.html">
+      <img src="../images/olive.png" height="60">Olive
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="toast.html">
+      <img src="../images/toast.png" height="60">Toast
+    </a>
+  </li>
+</ul>
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Isabel Zimmerman </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 19, 2023</p>
-    </div>
-  </div>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  // get file name
+  const filename = window.location.pathname.split("/").slice(-1)[0];
   
-    
-  </div>
+  // latch active
+  const toolLinks = window.document.querySelectorAll("#choose-your-tool a");
+  for (const tool of toolLinks) {
+    if (tool.href.endsWith(filename)) {
+      tool.classList.add("active");
+      break;
+    }
+  }
   
+   // save in local storage
+  window.localStorage.setItem("tutorialTool", filename);
+});
 
-</header>
+</script>
+<p>this is olive</p>
+<pre class="shinylive-python"><code>#| standalone: true
 
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
-</section>
-<section id="fault-vs.-failure" class="level2">
-<h2 class="anchored" data-anchor-id="fault-vs.-failure">Fault vs.&nbsp;failure</h2>
-</section>
-<section id="modeling-and-estimating-software-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="modeling-and-estimating-software-requirements">Modeling and estimating software requirements</h2>
-<ul>
-<li>if you don’t know what to model, go back to domain knowledge</li>
-<li>clear project plan to keep stakeholders informed</li>
-<li>have a clear understanding of what is expected</li>
-<li>need to have budgeting and resource planning for allocation of appropriate amounts of time, money, and personnel</li>
-<li>help to set realistic expectations for the project, to improve communication btwn team members and stakeholders</li>
-<li>to identify potential changes or additions to the requirement</li>
-<li></li>
-</ul>
-<p>some frameworks - waterfall model: once you complete a phase, you cannot go back - agile: work in sprints for fast iteration, try to break down tasks for concurrency</p>
-</section>
-<section id="types-of-requirements" class="level1">
-<h1>Types of requirements</h1>
-<ul>
-<li>user requirements
-<ul>
-<li>statments in natural language plus diagrams of the services the system provides + operational constraints</li>
-<li>written for customers</li>
-<li>client managers, system end-users, client engineers, contract managers, system architects</li>
-</ul></li>
-<li>system requirements
-<ul>
-<li>structured document setting out detailed descriptions of system services</li>
-<li>written as contract between client and contractor</li>
-<li>system end-users, client engineers, system architects, software developers</li>
-</ul></li>
-<li>software specification
-<ul>
-<li>detailed software descriptions which can serve as a basis for a design or implementation</li>
-<li>client engineers, system architects, software developers</li>
-<li>written for developers</li>
-</ul></li>
-</ul>
-<section id="functional-nonfunctional-and-domain-requirementsclassification" class="level2">
-<h2 class="anchored" data-anchor-id="functional-nonfunctional-and-domain-requirementsclassification">functional, nonfunctional, and domain requirements/classification</h2>
-<ul>
-<li>functional requirements
-<ul>
-<li>functionality and services provided by the system
-<ul>
-<li>how the system should react to certain inputs</li>
-<li>how the system should behave in certain situations</li>
-</ul></li>
-</ul></li>
-<li>nonfunctional requirements
-<ul>
-<li>constraints on the services or functions offered by the system</li>
-</ul>
-<ol type="1">
-<li>product requirements: requirements which specify that the delivered product must behave in a certain way (execution speed, reliability)</li>
-<li>organizational/process requirements: consequence of organizational policies and procedures (implementational requirements, process standards used)</li>
-<li>external requirements: arise from factors which are external to the system and its development process (legislative, interoperability)</li>
-</ol></li>
-</ul>
-</section>
-<section id="domain-requirement" class="level2">
-<h2 class="anchored" data-anchor-id="domain-requirement">domain requirement</h2>
-<ul>
-<li>from application domain of the system</li>
-<li>refelcts the characteristics of that domain</li>
-<li>maybe functional or non functional</li>
-<li>if domain requirements are not satisfied, the system may be unworkable</li>
-</ul>
-<p>examples</p>
-<ul>
-<li><p>some documents must be deleted upon printing</p></li>
-<li><p>understandability</p>
-<ul>
-<li>requiremenets are expressed in the language of the application domain</li>
-</ul></li>
-<li><p>implicitness</p>
-<ul>
-<li>domain specialists understand the area so well they dont think to make these things explicit</li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="user-requirements" class="level1">
-<h1>User requirements</h1>
-<p>should describe functional and non-functional requirements</p>
-<ul>
-<li>needs to be understandable by system users who don’t have detailed technical knowledge</li>
-</ul>
-<p>User requirements are defined using natural language, tables, and diagrams</p>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-problems with natural language
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>ambiguity: readers and writers may not interpret words in the same way</li>
-<li>over-flexibility: the same thing may be expressed in a number of different ways</li>
-<li>requirements amalgamation &amp; confusion: several different (eg, functional and non-functional) requirements may be expressed/mixed together</li>
-<li>lack of modularization: natural language structures are inadequate to structure system requirements</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="guidelines-for-writing-requirements" class="level1">
-<h1>Guidelines for writing requirements</h1>
-<ul>
-<li>invent a standard format and use it for all requirements</li>
-<li>use language in a consistent way
-<ul>
-<li>“shall” for mandatory reqs</li>
-<li>“should” for desirable reqs</li>
-</ul></li>
-<li>use <strong>text highlighting</strong> to identify key parts of the requirements</li>
-<li>avoid using jargon</li>
-</ul>
+from shiny import *
+import pandas as pd
+
+app_ui = ui.page_fluid(
+    ui.output_ui("some_html"),
+    ui.input_slider("n", "N", 0, 100, 40),
+    ui.output_text_verbatim("txt"),
+)
+
+def server(input, output, session):
+    @output
+    @render.text
+    def txt():
+        return f"The value of n*2 is {input.n() * 2}"
+
+    @output
+    @render.ui
+    def some_html():
+        return ui.HTML("&lt;marquee&gt;time to rewrap!&lt;/marquee&gt;")
+
+app = App(app_ui, server)</code></pre>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

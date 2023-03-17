@@ -4,7 +4,14 @@
     "href": "posts/first-draft.html",
     "title": "rewrapped",
     "section": "",
-    "text": "#| standalone: true\n\nfrom shiny import *\nimport pandas as pd\n\napp_ui = ui.page_fluid(\n    ui.output_ui(\"some_html\"),\n    ui.input_slider(\"n\", \"N\", 0, 100, 40),\n    ui.output_text_verbatim(\"txt\"),\n)\n\ndef server(input, output, session):\n    @output\n    @render.text\n    def txt():\n        return f\"The value of n*2 is {input.n() * 2}\"\n\n    @output\n    @render.ui\n    def some_html():\n        return ui.HTML(\"<marquee>time to rewrap!</marquee>\")\n\napp = App(app_ui, server)"
+    "text": "Choose your persona\n\n Olive \n Toast"
+  },
+  {
+    "objectID": "posts/mar-16.html",
+    "href": "posts/mar-16.html",
+    "title": "I don’t know what software architecture is and at this point I’m too afraid to ask",
+    "section": "",
+    "text": "describes a system and its major components and how they interact with each otheer\nsoftware architecture and design includes several contributory factors such as: business strategy, quality attribute\nArtitecture: nonfunctional decisions are cast and separated by the functional requirements. In DESIGN, functional requirements are decided.\n\n\nidk its useful here\nKruchten’s 4+1 arch view model (logical, development, process, and physical views of a system and environment)\n\n\n\n\ngraph TD\n    A[logical] --> B[development]\n    B --> C[physical]\n    A -->D[process]\n    D -->C\n\n\n\n\n\n\n\n\n\nlogical: functionality of the system, for the developers, engineers, managers\nprocess: communication between processes, behavior, tasks (try to not create bottlenecks during concurrent work), for system architects, developers, people integrating\ndevelopment: coding standards, gantt charts, agile-y, product owners, developers\nphysical: UI/UX, how to map hardware to software product owner,\n\n\n\n\n\nbluepreint for a system\nsoftware design provides a design plan that describes the elements of a system, how they fit, and work together to fulfill the requirement of the system\n\n\n\n\n\ngraph TD\n    A[software architecture design] -->|hardware arch| B[hardware arch design]\n    B --> |modification to hardware arch| A\n    A -->|modification to req| C[domain analysis, requirement analysis, risk analysis]\n    C --> |requirement desired quality| A\n    A --> |implmentation consistency| D[more stuff]\n    D --> |other requirements| A\n\n\n\n\n\n\n\n\nwell laid arch reduces busienss risks and associated with building a technical solution and builds a bridge btwn business and technical requirements\ndev - plan - code - build - test ops - release - deploy - operation/monitor/maintain\neach architectural style empasizes one or more of the quality attributes: usability, availability, secuity, performance, maintainability, flexibility, portability\n\n\n\nQuality attribute requirements (QAR) is specified in terms of observable, usually measurable chracteristics of the system that indicate its fitness for use.\n\nthey are modifiers of functional requirements that indicate how it might be used\n\nQuality model is defined w linked topic areas: - process quality: quality of process producing the product () - internal quality: quality of the structure itself () - external quality: quality of finished product, before delivery () - quality in use: quality of larger process in which the delivered product is used ()"
   },
   {
     "objectID": "posts/feb-9.html",
@@ -95,6 +102,6 @@
     "href": "blog.html",
     "title": "blog",
     "section": "",
-    "text": "rewrapped\n\n\n\n\n\n\n\n\n\n\n\n\nApr 30, 2023\n\n\n\n\n\n\n\n\nan ode to functional/non-functional requirements\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 9, 2023\n\n\n\n\n\n\n\n\ncharacteristics of software requirements\n\n\n\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\n\n\n\n\n\n\nWhat is software engineering? What are requirements?\n\n\n\n\n\n\n\n\n\n\n\n\nJan 19, 2023\n\n\nIsabel Zimmerman\n\n\n\n\n\n\nNo matching items"
+    "text": "I don’t know what software architecture is and at this point I’m too afraid to ask\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nrewrapped\n\n\n\n\n\n\n\n\n\n\n\n\nApr 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nan ode to functional/non-functional requirements\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 9, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncharacteristics of software requirements\n\n\n\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is software engineering? What are requirements?\n\n\n\n\n\n\n\n\n\n\n\n\nJan 19, 2023\n\n\nIsabel Zimmerman\n\n\n\n\n\n\nNo matching items"
   }
 ]

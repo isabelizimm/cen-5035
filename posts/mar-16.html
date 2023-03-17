@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Isabel Zimmerman">
-<meta name="dcterms.date" content="2023-01-19">
 
-<title>CEN5035 - What is software engineering? What are requirements?</title>
+<title>CEN5035 - I don’t know what software architecture is and at this point I’m too afraid to ask</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,6 +58,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="tools.css">
@@ -104,16 +105,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
-  <li><a href="#fault-vs.-failure" id="toc-fault-vs.-failure" class="nav-link" data-scroll-target="#fault-vs.-failure">Fault vs.&nbsp;failure</a></li>
-  <li><a href="#modeling-and-estimating-software-requirements" id="toc-modeling-and-estimating-software-requirements" class="nav-link" data-scroll-target="#modeling-and-estimating-software-requirements">Modeling and estimating software requirements</a></li>
-  <li><a href="#types-of-requirements" id="toc-types-of-requirements" class="nav-link" data-scroll-target="#types-of-requirements">Types of requirements</a>
+  <li><a href="#software-architecture" id="toc-software-architecture" class="nav-link active" data-scroll-target="#software-architecture">software architecture</a>
   <ul class="collapse">
-  <li><a href="#functional-nonfunctional-and-domain-requirementsclassification" id="toc-functional-nonfunctional-and-domain-requirementsclassification" class="nav-link" data-scroll-target="#functional-nonfunctional-and-domain-requirementsclassification">functional, nonfunctional, and domain requirements/classification</a></li>
-  <li><a href="#domain-requirement" id="toc-domain-requirement" class="nav-link" data-scroll-target="#domain-requirement">domain requirement</a></li>
+  <li><a href="#the-unified-modeling-language-uml" id="toc-the-unified-modeling-language-uml" class="nav-link" data-scroll-target="#the-unified-modeling-language-uml">The Unified Modeling Language (UML)</a></li>
+  <li><a href="#back-to-architecture" id="toc-back-to-architecture" class="nav-link" data-scroll-target="#back-to-architecture">back to architecture</a></li>
+  <li><a href="#quality-attribute-requirements" id="toc-quality-attribute-requirements" class="nav-link" data-scroll-target="#quality-attribute-requirements">quality attribute requirements</a></li>
   </ul></li>
-  <li><a href="#user-requirements" id="toc-user-requirements" class="nav-link" data-scroll-target="#user-requirements">User requirements</a></li>
-  <li><a href="#guidelines-for-writing-requirements" id="toc-guidelines-for-writing-requirements" class="nav-link" data-scroll-target="#guidelines-for-writing-requirements">Guidelines for writing requirements</a></li>
   </ul>
 </nav>
     </div>
@@ -122,26 +119,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">What is software engineering? What are requirements?</h1>
+<h1 class="title">I don’t know what software architecture is and at this point I’m too afraid to ask</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Isabel Zimmerman </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 19, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -149,131 +134,78 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
-</section>
-<section id="fault-vs.-failure" class="level2">
-<h2 class="anchored" data-anchor-id="fault-vs.-failure">Fault vs.&nbsp;failure</h2>
-</section>
-<section id="modeling-and-estimating-software-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="modeling-and-estimating-software-requirements">Modeling and estimating software requirements</h2>
-<ul>
-<li>if you don’t know what to model, go back to domain knowledge</li>
-<li>clear project plan to keep stakeholders informed</li>
-<li>have a clear understanding of what is expected</li>
-<li>need to have budgeting and resource planning for allocation of appropriate amounts of time, money, and personnel</li>
-<li>help to set realistic expectations for the project, to improve communication btwn team members and stakeholders</li>
-<li>to identify potential changes or additions to the requirement</li>
-<li></li>
-</ul>
-<p>some frameworks - waterfall model: once you complete a phase, you cannot go back - agile: work in sprints for fast iteration, try to break down tasks for concurrency</p>
-</section>
-<section id="types-of-requirements" class="level1">
-<h1>Types of requirements</h1>
-<ul>
-<li>user requirements
-<ul>
-<li>statments in natural language plus diagrams of the services the system provides + operational constraints</li>
-<li>written for customers</li>
-<li>client managers, system end-users, client engineers, contract managers, system architects</li>
-</ul></li>
-<li>system requirements
-<ul>
-<li>structured document setting out detailed descriptions of system services</li>
-<li>written as contract between client and contractor</li>
-<li>system end-users, client engineers, system architects, software developers</li>
-</ul></li>
-<li>software specification
-<ul>
-<li>detailed software descriptions which can serve as a basis for a design or implementation</li>
-<li>client engineers, system architects, software developers</li>
-<li>written for developers</li>
-</ul></li>
-</ul>
-<section id="functional-nonfunctional-and-domain-requirementsclassification" class="level2">
-<h2 class="anchored" data-anchor-id="functional-nonfunctional-and-domain-requirementsclassification">functional, nonfunctional, and domain requirements/classification</h2>
-<ul>
-<li>functional requirements
-<ul>
-<li>functionality and services provided by the system
-<ul>
-<li>how the system should react to certain inputs</li>
-<li>how the system should behave in certain situations</li>
-</ul></li>
-</ul></li>
-<li>nonfunctional requirements
-<ul>
-<li>constraints on the services or functions offered by the system</li>
-</ul>
-<ol type="1">
-<li>product requirements: requirements which specify that the delivered product must behave in a certain way (execution speed, reliability)</li>
-<li>organizational/process requirements: consequence of organizational policies and procedures (implementational requirements, process standards used)</li>
-<li>external requirements: arise from factors which are external to the system and its development process (legislative, interoperability)</li>
-</ol></li>
-</ul>
-</section>
-<section id="domain-requirement" class="level2">
-<h2 class="anchored" data-anchor-id="domain-requirement">domain requirement</h2>
-<ul>
-<li>from application domain of the system</li>
-<li>refelcts the characteristics of that domain</li>
-<li>maybe functional or non functional</li>
-<li>if domain requirements are not satisfied, the system may be unworkable</li>
-</ul>
-<p>examples</p>
-<ul>
-<li><p>some documents must be deleted upon printing</p></li>
-<li><p>understandability</p>
-<ul>
-<li>requiremenets are expressed in the language of the application domain</li>
-</ul></li>
-<li><p>implicitness</p>
-<ul>
-<li>domain specialists understand the area so well they dont think to make these things explicit</li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="user-requirements" class="level1">
-<h1>User requirements</h1>
-<p>should describe functional and non-functional requirements</p>
-<ul>
-<li>needs to be understandable by system users who don’t have detailed technical knowledge</li>
-</ul>
-<p>User requirements are defined using natural language, tables, and diagrams</p>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="software-architecture" class="level1">
+<h1>software architecture</h1>
+<p>describes a system and its major components and how they interact with each otheer</p>
+<p>software architecture and design includes several contributory factors such as: business strategy, quality attribute</p>
+<p>Artitecture: nonfunctional decisions are cast and separated by the functional requirements. In DESIGN, functional requirements are decided.</p>
+<section id="the-unified-modeling-language-uml" class="level2">
+<h2 class="anchored" data-anchor-id="the-unified-modeling-language-uml">The Unified Modeling Language (UML)</h2>
+<p>idk its useful here</p>
+<p>Kruchten’s 4+1 arch view model (logical, development, process, and physical views of a system and environment)</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">graph TD
+    A[logical] --&gt; B[development]
+    B --&gt; C[physical]
+    A --&gt;D[process]
+    D --&gt;C
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
 </div>
-<div class="callout-caption-container flex-fill">
-problems with natural language
+<p></p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
+</div>
 <ul>
-<li>ambiguity: readers and writers may not interpret words in the same way</li>
-<li>over-flexibility: the same thing may be expressed in a number of different ways</li>
-<li>requirements amalgamation &amp; confusion: several different (eg, functional and non-functional) requirements may be expressed/mixed together</li>
-<li>lack of modularization: natural language structures are inadequate to structure system requirements</li>
+<li>logical: functionality of the system, for the developers, engineers, managers</li>
+<li>process: communication between processes, behavior, tasks (try to not create bottlenecks during concurrent work), for system architects, developers, people integrating</li>
+<li>development: coding standards, gantt charts, agile-y, product owners, developers</li>
+<li>physical: UI/UX, how to map hardware to software product owner,</li>
 </ul>
-</div>
-</div>
 </section>
-<section id="guidelines-for-writing-requirements" class="level1">
-<h1>Guidelines for writing requirements</h1>
+<section id="back-to-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="back-to-architecture">back to architecture</h2>
 <ul>
-<li>invent a standard format and use it for all requirements</li>
-<li>use language in a consistent way
-<ul>
-<li>“shall” for mandatory reqs</li>
-<li>“should” for desirable reqs</li>
-</ul></li>
-<li>use <strong>text highlighting</strong> to identify key parts of the requirements</li>
-<li>avoid using jargon</li>
+<li>bluepreint for a system</li>
+<li>software design provides a design plan that describes the elements of a system, how they fit, and work together to fulfill the requirement of the system</li>
 </ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">graph TD
+    A[software architecture design] --&gt;|hardware arch| B[hardware arch design]
+    B --&gt; |modification to hardware arch| A
+    A --&gt;|modification to req| C[domain analysis, requirement analysis, risk analysis]
+    C --&gt; |requirement desired quality| A
+    A --&gt; |implmentation consistency| D[more stuff]
+    D --&gt; |other requirements| A
+</pre>
+<div id="mermaid-tooltip-2" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>well laid arch reduces busienss risks and associated with building a technical solution and builds a bridge btwn business and technical requirements</p>
+<p>dev - plan - code - build - test ops - release - deploy - operation/monitor/maintain</p>
+<p>each architectural style empasizes one or more of the quality attributes: usability, availability, secuity, performance, maintainability, flexibility, portability</p>
+</section>
+<section id="quality-attribute-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="quality-attribute-requirements">quality attribute requirements</h2>
+<p><strong>Quality attribute requirements (QAR) is specified in terms of observable, usually measurable chracteristics of the system that indicate its fitness for use.</strong></p>
+<ul>
+<li>they are modifiers of functional requirements that indicate how it might be used</li>
+</ul>
+<p>Quality model is defined w linked topic areas: - <strong>process quality</strong>: quality of process producing the product () - <strong>internal quality</strong>: quality of the structure itself () - <strong>external quality</strong>: quality of finished product, before delivery () - <strong>quality in use</strong>: quality of larger process in which the delivered product is used ()</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

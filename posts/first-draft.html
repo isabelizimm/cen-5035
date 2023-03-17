@@ -40,11 +40,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<meta name="shinylive:serviceworker_dir" content="..">
-<script src="../site_libs/quarto-contrib/shinylive-0.0.11/shinylive/load-shinylive-sw.js" type="module"></script>
-<script src="../site_libs/quarto-contrib/shinylive-0.0.11/shinylive/run-python-blocks.js" type="module"></script>
-<link href="../site_libs/quarto-contrib/shinylive-0.0.11/shinylive/shinylive.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,6 +61,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="tools.css">
 </head>
 
 <body class="nav-fixed">
@@ -131,31 +127,15 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<pre class="shinylive-python"><code>#| standalone: true
-
-from shiny import *
-import pandas as pd
-
-app_ui = ui.page_fluid(
-    ui.output_ui("some_html"),
-    ui.input_slider("n", "N", 0, 100, 40),
-    ui.output_text_verbatim("txt"),
-)
-
-def server(input, output, session):
-    @output
-    @render.text
-    def txt():
-        return f"The value of n*2 is {input.n() * 2}"
-
-    @output
-    @render.ui
-    def some_html():
-        return ui.HTML("&lt;marquee&gt;time to rewrap!&lt;/marquee&gt;")
-
-app = App(app_ui, server)</code></pre>
+<section id="choose-your-persona" class="level4 fw-light">
+<h4 class="fw-light anchored" data-anchor-id="choose-your-persona">Choose your persona</h4>
+<div class="tool g-col-lg-9 g-col-12">
+<p><a href="olive.html" role="button" class="btn btn-outline-light"> <img src="../images/olive.png" class="img-fluid" alt="Black cat" width="77">Olive </a></p>
+<p><a href="toast.html" role="button" class="btn btn-outline-light"> <img src="../images/toast.png" class="img-fluid" alt="Brown dog" width="77">Toast </a> </p>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
